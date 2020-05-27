@@ -59,7 +59,7 @@ img {
 	width: 100%;
 	height: 93vh;
 	position: relative;
-	background: url({% static 'back2.jpg' %}) no-repeat center center/cover;
+	background: url({% static 'back2.jpg' %}); no-repeat center center/cover;
 }
 
 
@@ -158,7 +158,7 @@ img {
 }
 
 .tab-border {
-	border-bottom: var(--primary-color) 4px solid;
+	border-bottom: #d4e35c 4px solid;
 }
 
 /* Tab Content */
@@ -556,27 +556,27 @@ tabItems.forEach(item => {
 			<div class="modal-body" style="margin-bottom:20px;margin-left:30px">
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">person_outline</i><input type="text" name="firstname" placeholder="First Name" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px;background: none;border: none;outline: none;">person_outline</i><input type="text" style="background: none;border: none;border-bottom: 2px solid #d4e35c" name="firstname" placeholder="First Name" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">person</i><input type="text" placeholder="Last Name" name="lastname" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">person</i><input type="text" style="background: none;border: none;border-bottom: 2px solid #d4e35c"placeholder="Last Name" name="lastname" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">account_box</i><input type="text" name="username" placeholder="User Name" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">account_box</i><input type="text" style="background: none;border:none;border-bottom: 2px solid #d4e35c" name="username" placeholder="User Name" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">email</i><input type="email" name="email" placeholder="E-Mail" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">email</i><input type="email" style="background: none;border: none;border-bottom: 2px solid #d4e35c" name="email" placeholder="E-Mail" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">lock_outline</i><input type="password" name="password1" placeholder="Password" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">lock_outline</i><input type="password" style="background: none;border: none;border-bottom: 2px solid #d4e35c" name="password1" placeholder="Password" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">lock</i><input type="password" name="password2" placeholder="Confirm Password" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">lock</i><input type="password" style="background: none;border: none;border-bottom: 2px solid #d4e35c;" name="password2" placeholder="Confirm Password" required="required">
 				</div>
 				<br><br>
 			</div>
@@ -599,15 +599,15 @@ tabItems.forEach(item => {
 			<div class="container">
 				<div id="tab-1" class="tab-item tab-border">
 					<i class="fas fa-door-open fa-3x"></i>
-					<p class="hide-sm">Cancel at any time</p>
+					<p class="hide-sm">Watch Anywhere</p>
 				</div>
-				<div id="tab-2" class="tab-item">
+				<div id="tab-2" class="tab-item tab-border">
 					<i class="fas fa-tablet-alt fa-3x"></i>
-					<p class="hide-sm">Watch anywhere</p>
+					<p class="hide-sm">Watch on any device</p>
 				</div>
-				<div id="tab-3" class="tab-item">
+				<div id="tab-3" class="tab-item tab-border">
 					<i class="fas fa-tags fa-3x"></i>
-					<p class="hide-sm">Pick your price</p>
+					<p class="hide-sm">Affordable Plans</p>
 				</div>
 			</div>
 		</section>
@@ -619,18 +619,17 @@ tabItems.forEach(item => {
 					<div class="tab-1-content-inner">
 						<div>
 							<p class="text-lg">
-								If you decide Netflix isn't for you - no problem. No commitment.
-								Cancel online anytime.
+								Stream inspring content and exclusive interviews on your phone, tablet, laptop, and TV.
 							</p>
 							<a href="#" class="btn btn-lg" style="background-color:#d4e35c; color:#000000" >Watch Free For 30 Days</a>
 						</div>
-						<img src="https://i.ibb.co/J2xDJV7/tab-content-1.png" alt="" />
+						<img src="https://i.ibb.co/SwWBvrJ/apple-iphone-smartphone-desk-4158.jpg" alt="" />
 					</div>
 				</div>
 
 				<!-- Tab Content 2 -->
 				<div id="tab-2-content" class="tab-content-item">
-					<div class="tab-2-content-top">
+					<div class="tab-1-content-inner">
 						<p class="text-lg">
 							Watch TV shows and movies anytime, anywhere — personalized for
 							you.
@@ -690,7 +689,7 @@ tabItems.forEach(item => {
 						<tbody>
 							<tr>
 								<td>Monthly price after free month ends on 6/19/19</td>
-								<td>$8.99</td>
+								<td>Rs.99</td>
 								<td>$12.99</td>
 								<td>$15.99</td>
 							</tr>
@@ -743,14 +742,13 @@ tabItems.forEach(item => {
 		</section>
 
 		<footer class="footer">
-			<p>Questions? Call 1-866-579-7172</p>
+			<p>Questions? Call (+91)0000000000</p>
 			<div class="footer-cols">
 				<ul>
 					<li><a href="#">FAQ</a></li>
 					<li><a href="#">Investor Relations</a></li>
 					<li><a href="#">Ways To Watch</a></li>
 					<li><a href="#">Corporate Information</a></li>
-					<li><a href="#">Netflix Originals</a></li>
 				</ul>
 				<ul>
 					<li><a href="#">Help Center</a></li>
@@ -766,7 +764,7 @@ tabItems.forEach(item => {
 				</ul>
 				<ul>
 					<li><a href="#">Media Center</a></li>
-					<li><a href="#">Buy Gift Cards</a></li>
+					<li><a href="#">Meet Our Team</a></li>
 					<li><a href="#">Cookie Preferences</a></li>
 					<li><a href="#">Legal Notices</a></li>
 				</ul>
