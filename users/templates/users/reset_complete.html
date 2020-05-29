@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        background: black
+    }
+</style>
+<body>
+<center style="padding-top:180px; padding-bottom:180px">
+    <p style="color:#d4e35c; font-size:50px">Password reset complete</p>
+    <p style="color:white; font-size:25px">Your password has been Reset</p>
+    <p style="color:white; font-size:25px">You may now go to Home page and login !</p>
+    <div class="row justify-content-md-center">
+        <a class="btn btn-primary" href="{% url 'users:login' %}"  style="font-size:30px; background-color:#d4e35c; border-radius: 12px; color:black">
+            <i class="material-icons" style="font-size:40px; color:black; margin-top:5px; margin-right:10px; margin-left:10px" >home</i>
+        </a>
+    </div>
+</center>
+</body>
+</html>
