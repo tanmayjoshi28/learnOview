@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
     'embed_video',
     'users.apps.UsersConfig',
     'videoCategories.apps.VideocategoriesConfig',
@@ -126,6 +127,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'git.pineapple@gmail.com'
+EMAIL_HOST_PASSWORD = 'vitchennai'
+PASSWORD_RESET_TIMEOUT_DAYS = 1
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 
 
 
