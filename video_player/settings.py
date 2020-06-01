@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware'
 ]
 
 ROOT_URLCONF = 'video_player.urls'
@@ -66,10 +68,21 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'video_player.wsgi.application'
 
@@ -137,7 +150,18 @@ EMAIL_HOST_PASSWORD = 'vitchennai'
 PASSWORD_RESET_TIMEOUT_DAYS = 1
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+LOGIN_URL = '/users/login'
+LOGOUT_URL = '/'
+LOGIN_REDIRECT_URL = '/videoCategories/homepage/'
 
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+   'fields': 'id, email, age_range'
+}
+SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 
+SOCIAL_AUTH_FACEBOOK_KEY = '351916999119818'
+SOCIAL_AUTH_FACEBOOK_SECRET = '72bc96f34137c5b18f439119b3f00319'
 
-
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY =  '57426894581-4ji52ik7m8830nbntbg4efjcd7bpbthr.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'GR1KaMh8nBFnHmeR6nthgsQo'
