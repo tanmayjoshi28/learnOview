@@ -26,6 +26,7 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('videoCategories/', include('videoCategories.urls')),
     path('', startPage, name='startpage'),
+    path('oauth/', include('social_django.urls', namespace='social')),
 
     path('reset_password/',
          auth_views.PasswordResetView.as_view(
