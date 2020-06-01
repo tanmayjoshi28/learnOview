@@ -4,6 +4,7 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{% load static %}
 	{% csrf_token %}
 
@@ -449,6 +450,16 @@ img {
 }
 }
 
+.icon-facebook:hover {
+    opacity: 0.7;
+    color:white;
+}
+
+.icon-google:hover {
+    opacity: 0.7;
+    color:white;
+}
+
     </style>
 
     <script>
@@ -498,8 +509,8 @@ tabItems.forEach(item => {
 				<h1 style="color:#d4e35c" >See what's next</h1>
 				<p style="color:#d4e35c">Watch anywhere. Get Inspired</p>
 				<a  class="btn btn-xl" data-toggle="modal" data-target="#registrationModal"
-					style="background-color:#d4e35c; color:#000000" >Sign Up to Watch <i class="fas fa-chevron-right btn-icon"></i
-				>
+					style="background-color:#d4e35c; color:#000000" >
+					Sign Up to Watch
 				</a>
 				<br>
 				<div class="row">
@@ -521,20 +532,29 @@ tabItems.forEach(item => {
         <form action="{% url 'users:login' %}" method="post">
             {% csrf_token %}
 			<div class="modal-body">
-				<label style="margin-left:5px" >E-MAIL</label>
 				<br>
-				<div class="row" style="margin-left:5px">
+				<div class="row" style="margin-left:100px">
 					<i class="material-icons" style="font-size:40px;margin-right:15px">email</i><input type="text" name="username" placeholder="Username" required="required">
 				</div>
-				<label style="margin-left:5px" >PASSWORD</label>
 				<br>
-				<div class="row" style="margin-left:5px">
+				<div class="row" style="margin-left:100px; margin-bottom:40px">
 					<i class="material-icons" style="font-size:40px;margin-right:15px">lock</i><input type="password" placeholder="Password" name="password" required="required">
+				</div>
+				<hr style="border-color:grey; margin-left:80px; margin-right:80px">
+					<p style="color:white; font-size:20px; margin-left:200px">Or Use</p>
+				<hr style="border-color:grey; margin-left:80px; margin-right:80px">
+				<div class="row" style="margin-left:150px">
+					<a href="{% url 'social:begin' 'google-oauth2' %}" class="icon-google" >
+						<img src="{% static 'googleicon.png' %}" style="height:60px; width:60px" >
+					</a>
+					<a href="{% url 'social:begin' 'facebook' %}" style="margin-left: 40px" class="icon-facebook">
+						<img src="{% static 'facebookicon.png' %}" style="height:60px; width:60px" >
+					</a>
 				</div>
 			</div>
 			<div class="modal-footer">
 			  <button type="submit" style="background-color:#d4e35c;color:black" class="btn btn-primary">Log-In</button>
-			  <a style="background-color:#d4e35c; color:black" class="btn btn-rounded" href="{% url 'reset_password' %}">Forget Password ?</a> 	
+			  <a style="background-color:#d4e35c; color:black" class="btn btn-rounded" href="{% url 'reset_password' %}">Forget Password ?</a>
 			</div>
         </form>
 
@@ -548,7 +568,7 @@ tabItems.forEach(item => {
       <div class="modal-content" style="background-color:black">
         <div class="modal-header">
 			<div class="row">
-          		<i class="material-icons" style="font-size:48px;color:#d4e35c">person_add</i><p class="modal-title" style="font-size:25px; color:white;margin-left:20px">Register Here </p>
+          		<i class="material-icons" style="font-size:48px;color:#d4e35c">person_add</i><p class="modal-title" style="color:white; font-size:25px; color:white;margin-left:20px">Register Here </p>
 			</div>
           <button type="button" class="btn btn-danger" data-dismiss="modal">&times;</button>
         </div>
@@ -557,27 +577,27 @@ tabItems.forEach(item => {
 			<div class="modal-body" style="margin-bottom:20px;margin-left:30px">
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px;background: none;border: none;outline: none;">person_outline</i><input type="text" style="background: none;border: none;border-bottom: 2px solid #d4e35c" name="firstname" placeholder="First Name" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px;background: none;border: none;outline: none;">person_outline</i><input type="text" style="color:white;background: none;border: none;border-bottom: 2px solid #d4e35c" name="firstname" placeholder="First Name" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">person</i><input type="text" style="background: none;border: none;border-bottom: 2px solid #d4e35c"placeholder="Last Name" name="lastname" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">person</i><input type="text" style="color:white; background: none;border: none;border-bottom: 2px solid #d4e35c"placeholder="Last Name" name="lastname" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">account_box</i><input type="text" style="background: none;border:none;border-bottom: 2px solid #d4e35c" name="username" placeholder="User Name" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">account_box</i><input type="text" style="color:white; background: none;border:none;border-bottom: 2px solid #d4e35c" name="username" placeholder="User Name" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">email</i><input type="email" style="background: none;border: none;border-bottom: 2px solid #d4e35c" name="email" placeholder="E-Mail" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">email</i><input type="email" style="color:white; background: none;border: none;border-bottom: 2px solid #d4e35c" name="email" placeholder="E-Mail" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">lock_outline</i><input type="password" style="background: none;border: none;border-bottom: 2px solid #d4e35c" name="password1" placeholder="Password" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">lock_outline</i><input type="password" style="color:white; background: none;border: none;border-bottom: 2px solid #d4e35c" name="password1" placeholder="Password" required="required">
 				</div>
 				<br>
 				<div class="row" style="margin-left:5px">
-					<i class="material-icons" style="font-size:40px;margin-right:15px">lock</i><input type="password" style="background: none;border: none;border-bottom: 2px solid #d4e35c;" name="password2" placeholder="Confirm Password" required="required">
+					<i class="material-icons" style="font-size:40px;margin-right:15px">lock</i><input type="password" style="color:white; background: none;border: none;border-bottom: 2px solid #d4e35c;" name="password2" placeholder="Confirm Password" required="required">
 				</div>
 				<br><br>
 			</div>
